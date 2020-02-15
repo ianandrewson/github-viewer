@@ -7,7 +7,7 @@ import {
 const initialState = {
   username: '',
   userInfo: null,
-  loading: true
+  loading: false
 };
 
 export default function reducer(state = initialState, action) {

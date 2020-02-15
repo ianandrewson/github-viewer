@@ -1,3 +1,3 @@
-export const selectUsername = state => state.username;
-export const selectLoading = state =>  state.loading;
-export const selectUserInfo = state => state.userInfo;
+export const selectUsername = state => state.user.username;
+export const selectLoading = state =>  state.user.loading;
+export const selectUserInfo = state => state.user.userInfo;
