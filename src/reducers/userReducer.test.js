@@ -1,6 +1,7 @@
 import { 
   setUser,
-  FETCH_USER_INFO 
+  FETCH_USER_INFO, 
+  FETCH_USER_INFO_LOADING
 } from '../actions/userActions';
 import reducer from './userReducer';
 
@@ -14,6 +15,12 @@ describe('user reducer tests', () => {
     expect(newState).toEqual({ username: 'testUser' });
   });
 
+  it('can handle the FETCH_USER_INFO_LOADING action', () => {
+    const action = { type: FETCH_USER_INFO_LOADING };
+    const initialState = { loading: false };
+    const newState = reducer(initialState, action);
+    expect(newState).toEqual({ loading: true });
+  });
 
   it('should handle fetch user info, set to state', () => {
     const action = { 
