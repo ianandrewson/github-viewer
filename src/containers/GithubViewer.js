@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../actions/userActions';
 
@@ -7,7 +7,11 @@ import { setUser } from '../actions/userActions';
 export default function GithubViewer() {
 
   const dispatch = useDispatch();
-  
+
+  // useEffect(() => {
+
+  // }, [username]);
+
   const handleUser = ({ target }) => {
     dispatch(setUser(target.value));
   };
