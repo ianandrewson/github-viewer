@@ -7,6 +7,7 @@ import { setUser } from '../actions/userActions';
 export default function GithubViewer() {
 
   const dispatch = useDispatch();
+  
   const handleUser = ({ target }) => {
     dispatch(setUser(target.value));
   };
