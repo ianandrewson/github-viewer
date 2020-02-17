@@ -10,7 +10,7 @@ export default function RepoDetails() {
 
   return (
     <>
-      <p>This is the repo detail section</p>;
+      <p>This is the repo detail section</p>
     </>
   );
 }

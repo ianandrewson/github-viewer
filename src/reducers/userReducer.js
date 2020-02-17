@@ -8,7 +8,8 @@ import {
 const initialState = {
   username: '',
   userInfo: null,
-  loading: false
+  loading: false,
+  repos: []
 };
 
 export default function reducer(state = initialState, action) {

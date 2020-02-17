@@ -1,4 +1,4 @@
-import { selectUsername, selectLoading, selectUserInfo } from './userSelectors';
+import { selectUsername, selectLoading, selectUserInfo, selectUserRepos } from './userSelectors';
 
 describe('user selector test', () => {
   it('can select username from state', () => {
@@ -17,5 +17,13 @@ describe('user selector test', () => {
     const state = { user: { userInfo: { full_name: 'Bob', location: 'SF' } } };
     const result = selectUserInfo(state);
     expect(result).toEqual({ full_name: 'Bob', location: 'SF' });
+  });
+
+  it('can select userRepos from state', () => {
+    const state = { user: { username: 'Ernie McGregz', userRepos: [
+      { name: 'repo1', id: 1234 }
+    ] } };
+    const result = selectUserRepos(state);
+    expect(result).toEqual([{ name: 'repo1', id: 1234 }]);
   });
 });
