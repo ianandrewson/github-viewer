@@ -1,4 +1,5 @@
 import { FETCH_REPO_PULLS_LOADING, FETCH_REPO_PULLS } from '../actions/repoActions';
+import reducer from './repoReducer';
 
 describe('repo reducer tests', () => {
   it('can handle the FETCH_REPO_PULLS_LOADING action', () => {
@@ -10,7 +11,7 @@ describe('repo reducer tests', () => {
   });
 
   it('can handle the FETCH_REPO_PULLS action', () => {
-    const initialState = { repos: [], loading: true };
+    const initialState = { repoPulls: [], loading: true };
     const action = { 
       type: FETCH_REPO_PULLS,
       payload: [
