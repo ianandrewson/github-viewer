@@ -22,7 +22,7 @@ export default function RepoDetails() {
   const repoItems = repos.map((repo, i) => (
     <li key={i}>
       <p>Name: {repo.name}</p>
-      <a>{repo.html_url}</a>
+      <a href={repo.html_url}>Link</a>
       <p>Description: {repo.description || 'No description given' }</p>
       <button value={repo.name} onClick={handleButtonClick}>See Repo Details</button>
     </li>
