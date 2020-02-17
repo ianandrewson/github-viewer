@@ -1,7 +1,8 @@
 import { 
   setUser,
   FETCH_USER_INFO, 
-  FETCH_USER_INFO_LOADING
+  FETCH_USER_INFO_LOADING,
+  FETCH_USER_REPOS
 } from '../actions/userActions';
 import reducer from './userReducer';
 
@@ -38,5 +39,22 @@ describe('user reducer tests', () => {
       },
       loading: false
     });
+  });
+
+  it('should handle fetch user Repos, set to state', () => {
+    const action = {
+      type: FETCH_USER_REPOS,
+      payload: [
+        { id: 12345, name: 'repo1', description: 'repo does stuff' },
+        { id: 23456, name: 'repo2', description: 'repo does other stuff' }
+      ]
+    };
+
+    const initialState = { userRepos: [] };
+    const newState = reducer(initialState, action);
+    expect(newState).toEqual({ userRepos: [
+      { id: 12345, name: 'repo1', description: 'repo does stuff' },
+      { id: 23456, name: 'repo2', description: 'repo does other stuff' }
+    ] });
   });
 });
