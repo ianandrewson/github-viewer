@@ -1,5 +1,5 @@
 const request = (path) => {
-  return fetch(`https://api.github.com/users/${path}`)
+  return fetch(`https://api.github.com${path}`)
     .then(res => Promise.all([res.ok, res.json()]))
     .then(([ok, json]) => {
       if(!ok) throw json;
@@ -7,5 +7,6 @@ const request = (path) => {
     });
 };
 
-export const fetchUser = username => request(`${username}`);
-export const fetchRepos = username => request(`${username}/repos`);
+export const fetchUser = username => request(`/users/${username}`);
+export const fetchRepos = username => request(`/users/${username}/repos`);
+export const fetchRepoPulls = (username, repoName) => request(`/repos/${username}/${repoName}/pulls`);

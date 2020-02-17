@@ -18,3 +18,10 @@ export function fetchRepos() {
     }
   ]);
 }
+
+export function fetchRepoPulls() {
+  return Promise.resolve([
+    { number: 1, state: 'open', title: 'best new feature', link: 'blah' },
+    { number: 2, state: 'closed', title: 'other new feature', link: 'blahblah' }
+  ]);
+}
