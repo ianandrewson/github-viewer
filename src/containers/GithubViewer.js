@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setUser, getUserInfo, getUserRepos } from '../actions/userActions';
 import { selectUsername } from '../selectors/userSelectors';
 import UserInfo from '../components/userInfo/UserInfo';
+import styles from './GithubViewer.css';
 
 export default function GithubViewer() {
 
@@ -19,10 +20,10 @@ export default function GithubViewer() {
   };
 
   return (
-    <>
+    <div className={styles.viewer}>
       <input type="text" placeholder="username" onChange={handleUserChange}/>
       <button onClick={submitUsername}>Find User</button>
       <UserInfo />
-    </>
+    </div>
   );
 }

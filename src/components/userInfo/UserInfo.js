@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { selectLoading, selectUserInfo } from '../../selectors/userSelectors';
 import RepoDetails from '../repoDetails/RepoDetails';
+import styles from './UserInfo.css';
 
 export default function UserInfo() {
 
@@ -11,7 +12,7 @@ export default function UserInfo() {
   if(loading) {
     return <h1>loading</h1>;
   } else if(!loading && !userInfo) {
-    return <h1>Use the search box to look for a user!</h1>;
+    return <h1 className={styles.userInfo}>Use the search box to look for a user!</h1>;
   }
 
   const location = userInfo.email || 'No given city';
@@ -19,7 +20,7 @@ export default function UserInfo() {
 
   return (
     <>
-      <section>
+      <section className={styles.userInfo}>
         <p>Name: {userInfo.name}</p>
         <p>Username: {userInfo.login}</p>
         <p>Link to profile: {userInfo.html_url}</p>
