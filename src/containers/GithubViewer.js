@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setUser, getUserInfo } from '../actions/userActions';
+import { setUser, getUserInfo, getUserRepos } from '../actions/userActions';
 import { selectUsername } from '../selectors/userSelectors';
 import UserInfo from '../components/userInfo/UserInfo';
 
@@ -15,6 +15,7 @@ export default function GithubViewer() {
 
   const submitUsername = () => {
     dispatch(getUserInfo(username));
+    dispatch(getUserRepos(username));
   };
 
   return (
